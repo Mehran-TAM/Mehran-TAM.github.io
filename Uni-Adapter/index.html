@@ -210,28 +210,54 @@
   <p style="padding: 15px"></p>
 </section>
 
-<section class="hero is-light is-small">
+
+
+
+
+
+
+
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <p style="padding: 15px"></p>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Test-time adaptation with pre-trained vision-language models has attracted increasing attention for 
-            tackling distribution shifts during the test time. Though prior studies have achieved very promising performance, they involve intensive computation which is severely unaligned with test-time adaptation.
-          </p>
-          <p> 
-            We design Uni-Adapter, a training-free dynamic adapter that enables effective and efficient test-time adaptation with 3D vision-language models.   
-          </p>
-        </div>
-      </div>
+    <div class="hero-body has-text-centered">
+
+      <!-- Motivation -->
+      <img src="static/images/Figure1_tSNE.png"
+           alt="t-SNE visualization of Uni3D embeddings and prototype caching strategies"
+           style="width:100%; max-width:1000px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+
+      <!-- Figure Caption -->
+      <p class="has-text-centered"
+         style="font-size:0.9rem; margin-top:0.75em; color:#555; line-height:1.5; max-width:900px; margin-left:auto; margin-right:auto;">
+        <strong>Figure 1:</strong> 
+        (<strong>a</strong>) t-SNE of Uni3D embeddings for the airplane class in ModelNet40-C shows clear intra-class clustering patterns. 
+        Confidence-based prototypes (triangles) cache only high-confidence samples, while cluster-based prototypes (circles) represent distribution modes via online clustering. 
+        (<strong>b</strong>) In the toy example, confidence-based caching leads to incorrect boundaries due to poor mode coverage, 
+        whereas cluster-based caching captures diverse patterns and enables correct predictions.
+      </p>
+
     </div>
-    <p style="padding: 15px"></p>
+  </div>
 </section>
 
 
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
 <section class="section">
   <p style="padding: 15px"></p>
   <div class="container is-max-desktop">
