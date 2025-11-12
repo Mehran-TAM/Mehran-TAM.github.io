@@ -209,34 +209,37 @@
 
 
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
 
-      <!-- Motivation -->
-      <img src="https://mehran-tam.github.io/materials/Figure1_tSNE.png"
-           alt="t-SNE visualization of Uni3D embeddings and prototype caching strategies"
-           style="style="width: 100%; max-width: 1000px; margin: auto;">
 
-      <!-- Figure Caption -->
-      <p class="has-text-centered"
-         style="font-size:0.9rem; margin-top:0.75em; color:#555; line-height:1.5; max-width:900px; margin-left:auto; margin-right:auto;">
-        <strong>Figure 1:</strong> 
-        (<strong>a</strong>) t-SNE of Uni3D embeddings for the airplane class in ModelNet40-C shows clear intra-class clustering patterns. 
-        Confidence-based prototypes (triangles) cache only high-confidence samples, while cluster-based prototypes (circles) represent distribution modes via online clustering. 
-        (<strong>b</strong>) In the toy example, confidence-based caching leads to incorrect boundaries due to poor mode coverage, 
-        whereas cluster-based caching captures diverse patterns and enables correct predictions.
+
+
+<section class="section" style="padding-top: 30px; padding-bottom: 30px;">
+  <div class="container is-max-desktop" style="max-width: 1000px; margin: auto; text-align: center;">
+    
+    <h2 class="title" style="font-size: 28px; margin-bottom: 10px;">Overview</h2>
+    <p style="margin-bottom: 20px; font-size: 16px; color: #555;"></p>
+    
+    <img src="https://mehran-tam.github.io/materials/Figure1_tSNE.png" 
+         alt="t-SNE Visualization of Uni3D Embeddings" 
+         style="width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    
+    <h3 class="subtitle" style="font-size: 20px; margin-top: 15px; margin-bottom: 10px; color: #333;">
+      t-SNE Visualization of Uni3D Embeddings and Prototype Caching Strategies
+    </h3>
+    
+    <div class="method-overview-text" 
+         style="text-align: justify; margin: auto; max-width: 900px; font-size: 17px; line-height: 1.6; color: #444;">
+      <p>
+        <strong>Figure 1:</strong> (<strong>a</strong>) t-SNE visualization of Uni3D embeddings for the <em>airplane</em> class in ModelNet40-C 
+        reveals clear intra-class clustering patterns. Confidence-based prototypes (triangles) cache only high-confidence samples, 
+        while cluster-based prototypes (circles) represent distribution modes through online clustering. 
+        (<strong>b</strong>) In a simplified example, confidence-based caching may form incorrect boundaries due to poor mode coverage, 
+        whereas cluster-based caching captures diverse distribution patterns and leads to more accurate predictions.
       </p>
-
     </div>
+
   </div>
 </section>
-
-
-
-
-
-
 
 
 
