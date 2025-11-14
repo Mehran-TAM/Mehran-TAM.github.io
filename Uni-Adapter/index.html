@@ -227,11 +227,12 @@
     <div class="method-overview-text" 
          style="text-align: justify; margin: auto; max-width: 900px; font-size: 17px; line-height: 1.6; color: #444;">
       <p>
-        <strong>Figure 1:</strong> (<strong>a</strong>) t-SNE visualization of Uni3D embeddings for the <em>airplane</em> class in ModelNet40-C 
-        reveals clear intra-class clustering patterns. Confidence-based prototypes (triangles) cache only high-confidence samples, 
-        while cluster-based prototypes (circles) represent distribution modes through online clustering. 
-        (<strong>b</strong>) In a simplified example, confidence-based caching may form incorrect boundaries due to poor mode coverage, 
-        whereas cluster-based caching captures diverse distribution patterns and leads to more accurate predictions.
+    <strong>Figure X — Method Overview.</strong><br>
+    Given a test point cloud \( \mathbf{X}_t \in \mathbb{R}^{L \times 3} \), our method extracts a point cloud feature \( \mathbf{f}_t \) via a point cloud encoder.
+    The <strong>3D cache</strong> is updated through <strong>online prototyping</strong>, where cluster centers serve as <strong>3D prototypes</strong>.
+    The <strong>Prototype Reassignment</strong> module refines these prototypes, and their affinity with \( \mathbf{f}_t \) is computed to obtain \( \mathbf{s}^{\text{cache}} \).
+    Finally, the prediction logit \( \mathbf{s}^{\text{final}} \) is produced by fusing \( \mathbf{s}^{\text{cache}} \) with the model’s base output \( \mathbf{s}^{\text{main}} \)
+    using entropy-driven confidence weighting.
       </p>
     </div>
 
