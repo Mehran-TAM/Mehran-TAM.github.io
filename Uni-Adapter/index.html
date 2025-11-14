@@ -372,16 +372,16 @@
 
 
 
-
-
 </section>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="method-overview-text" style="text-align: justify; margin: auto; max-width: 100%; font-size: 17.6px;">
       <h2 class="title" style="text-align: center;">3D VLFM Throughput Comparison</h2>
       <p style="padding: 10px"></p>
-      <p>We compare the throughput performance of <b>Uni-Adapter</b> against existing 3D VLFMs and cache-based 
-        approaches on the ModelNet40-C dataset. All results are obtained with batch size = 1 on an RTX 4090 GPU.</p>
+      <p>
+        We compare the throughput performance of <b>Uni-Adapter</b> against existing 3D VLFMs and cache-based
+        approaches on the ModelNet40-C dataset. All results are obtained with batch size = 1 on an RTX 4090 GPU.
+      </p>
     </div>
 
     <p style="padding: 20px"></p>
@@ -397,9 +397,9 @@
 
           <tr>
             <th style="padding: 10px;">Method</th>
-            <th style="padding: 10px;">Uni3D</th>
-            <th style="padding: 10px;">OpenShape</th>
-            <th style="padding: 10px;">ULIP-2</th>
+            <th style="padding: 10px;">Uni3D<sup>[1]</sup></th>
+            <th style="padding: 10px;">OpenShape<sup>[2]</sup></th>
+            <th style="padding: 10px;">ULIP-2<sup>[3]</sup></th>
           </tr>
 
           <tr><td colspan="4" style="border-bottom: 2px solid #ddd;"></td></tr>
@@ -412,26 +412,25 @@
           </tr>
 
           <tr>
-            <td style="padding: 10px;">TDA</td>
+            <td style="padding: 10px;">TDA<sup>[4]</sup></td>
             <td style="padding: 10px;">36.02</td>
             <td style="padding: 10px;">14.43</td>
             <td style="padding: 10px;">21.78</td>
           </tr>
 
           <tr>
-            <td style="padding: 10px;">Point-Cache</td>
+            <td style="padding: 10px;">Point-Cache<sup>[5]</sup></td>
             <td style="padding: 10px;">9.73</td>
             <td style="padding: 10px;">9.74</td>
             <td style="padding: 10px;">11.11</td>
           </tr>
 
-          <tr style="background-color:#e6e6e6">
+          <tr style="background-color:#e6e6e6;">
             <td style="padding: 10px;"><b>Uni-Adapter (Ours)</b></td>
             <td style="padding: 10px;"><u><b>36.93</b></u></td>
             <td style="padding: 10px;"><u><b>15.06</b></u></td>
             <td style="padding: 10px;"><u><b>22.67</b></u></td>
           </tr>
-
         </tbody>
       </table>
     </div>
@@ -439,8 +438,10 @@
     <p style="padding: 15px"></p>
 
     <div class="method-overview-text" style="text-align: justify; margin: auto; max-width: 100%; font-size: 17.6px;">
-      <p>
-
+      <p></p>
+    </div>
+  </div>
+</section>
 
 
 
