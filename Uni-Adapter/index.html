@@ -453,7 +453,178 @@
 
 
 
+<table style="width:70%; margin:auto; border-collapse:collapse; font-size:14px; text-align:center;">
+  <caption style="caption-side:bottom; text-align:center; padding-top:8px;">
+    <b>Top-1 accuracy (%) on ShapeNet-C under distribution shifts using Uni3D-Large (batch size = 1).</b><br>
+    Source-Only shows performance without adaptation. Best and second-best are in <b>bold</b> and <u>underline</u>.<br>
+    <b>*</b> denotes VLFM-based TTA methods.
+  </caption>
 
+  <thead>
+    <tr style="border-bottom:3px solid #000;">
+      <th>Method</th>
+      <th>uni</th><th>gauss</th><th>backg</th><th>impul</th><th>upsam</th>
+      <th>rbf</th><th>rbf-inv</th><th>den-dec</th><th>dens-inc</th>
+      <th>shear</th><th>rot</th><th>cut</th><th>distort</th><th>oclsion</th><th>lidar</th>
+      <th><b>Avg.</b></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <!-- Source Only -->
+    <tr style="border-top:2px solid #000;">
+      <td><b>Source-Only</b></td>
+      <td>60.33</td><td>55.75</td><td>65.95</td><td>65.02</td><td>59.04</td>
+      <td>59.41</td><td>60.23</td><td>79.06</td><td>71.07</td>
+      <td>75.62</td><td>73.87</td><td>76.82</td><td>63.22</td>
+      <td>2.37</td><td>1.06</td><td>57.92</td>
+    </tr>
+
+    <!-- Training-based methods -->
+    <tr><td>TENT (ICLR21)</td><td>59.88</td><td>54.30</td><td>58.31</td><td>61.14</td><td>57.78</td><td>58.69</td><td>60.17</td><td>79.30</td><td>72.69</td><td>75.83</td><td>74.54</td><td>77.08</td><td>63.23</td><td>2.97</td><td><b>2.54</b></td><td>57.23</td></tr>
+
+    <tr><td>SHOT (ICML20)</td><td>59.96</td><td>54.32</td><td>58.37</td><td>61.14</td><td>57.67</td><td>58.81</td><td>60.19</td><td>79.23</td><td>72.53</td><td>75.90</td><td>74.57</td><td>77.09</td><td>63.34</td><td>3.02</td><td>2.51</td><td>57.24</td></tr>
+
+    <tr><td>SAR (ICLR23)</td><td>59.86</td><td>54.09</td><td>58.59</td><td>60.84</td><td>57.48</td><td>58.65</td><td>60.09</td><td>79.04</td><td>73.23</td><td>74.78</td><td>71.39</td><td>77.04</td><td>61.88</td><td>2.69</td><td>1.40</td><td>56.74</td></tr>
+
+    <tr><td>DUA (CVPR22)</td><td>59.85</td><td>54.37</td><td>58.26</td><td>61.21</td><td>57.89</td><td>58.71</td><td>60.15</td><td>79.11</td><td>72.40</td><td>72.55</td><td><u>75.91</u></td><td>77.05</td><td>63.24</td><td>2.97</td><td><u>2.53</u></td><td>57.08</td></tr>
+
+    <tr><td>MEMO (NIPS22)</td><td>60.33</td><td>55.76</td><td>66.02</td><td>65.02</td><td>59.04</td><td>59.42</td><td>60.23</td><td>79.01</td><td>70.92</td><td>75.62</td><td>73.95</td><td>76.82</td><td>63.22</td><td>2.41</td><td>1.09</td><td>57.92</td></tr>
+
+    <tr>
+      <td>TPT* (NIPS22)</td>
+      <td>62.87</td><td>56.63</td><td><u>69.20</u></td><td>64.70</td><td>59.10</td><td>58.29</td><td>60.43</td>
+      <td><b>81.59</b></td><td><u>75.23</u></td><td><u>76.93</u></td><td>74.56</td><td><b>80.52</b></td>
+      <td>63.02</td><td>2.17</td><td>1.25</td><td>59.10</td>
+    </tr>
+
+    <tr><td>LAME (CVPR22)</td><td>60.43</td><td>55.89</td><td>66.04</td><td>65.12</td><td>59.09</td><td>59.42</td><td>60.33</td><td>79.13</td><td>71.16</td><td>75.74</td><td>74.08</td><td>76.99</td><td>63.35</td><td>2.31</td><td>1.02</td><td>58.01</td></tr>
+
+    <!-- Training-Free -->
+    <tr><td>3DD-TTA (WACV25)</td><td><u>65.78</u></td><td><u>64.16</u></td><td>55.00</td><td>61.75</td><td><b>68.05</b></td><td>55.06</td><td>56.20</td><td>74.20</td><td>67.35</td><td>68.06</td><td>61.19</td><td>73.01</td><td>56.29</td><td>2.50</td><td>0.97</td><td>55.30</td></tr>
+
+    <tr><td>CloudFixer † (ECCV24)</td><td>65.57</td><td><b>65.30</b></td><td>58.15</td><td><b>69.53</b></td><td>63.65</td><td>55.02</td><td>56.71</td><td>69.89</td><td>58.67</td><td>65.65</td><td>65.64</td><td>70.36</td><td>55.09</td><td>3.75</td><td>2.46</td><td>57.24</td></tr>
+
+    <tr><td>T3A (NIPS21)</td><td>60.60</td><td>53.12</td><td>20.70</td><td>44.19</td><td>49.31</td><td>46.35</td><td>44.37</td><td>70.31</td><td>63.01</td><td>64.86</td><td>63.83</td><td>68.24</td><td>52.60</td><td>1.00</td><td>0.87</td><td>46.89</td></tr>
+
+    <tr><td>TDA* (CVPR24)</td><td>62.75</td><td>58.95</td><td>68.33</td><td>67.14</td><td>62.09</td><td><u>61.28</u></td><td><u>62.56</u></td><td>79.00</td><td>71.44</td><td>75.93</td><td>74.79</td><td>77.17</td><td><u>64.44</u></td><td><u>3.82</u></td><td>1.81</td><td><u>59.43</u></td></tr>
+
+    <tr><td>Point-Cache* (CVPR25)</td>
+      <td>62.63</td><td>56.71</td><td>66.51</td><td>65.85</td><td>61.15</td>
+      <td>59.79</td><td>61.49</td><td>75.89</td><td>69.47</td><td>72.61</td><td>70.81</td><td>73.82</td><td>63.41</td><td>3.64</td><td>1.67</td><td>57.70</td>
+    </tr>
+
+    <!-- Ours -->
+    <tr style="background-color:#e6e6e6;">
+      <td><b>Uni-Adapter (Ours)</b></td>
+      <td><b>66.89</b></td><td>62.23</td><td><b>71.38</b></td><td><u>68.62</u></td><td><u>64.15</u></td>
+      <td><b>67.42</b></td><td><b>67.33</b></td><td><u>80.76</u></td><td><b>75.69</b></td>
+      <td><b>78.11</b></td><td><b>77.01</b></td><td><u>79.64</u></td><td><b>70.14</b></td>
+      <td><b>4.36</b></td><td>2.47</td><td><b>62.41</b></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<table style="width:70%; margin:auto; border-collapse:collapse; font-size:14px; text-align:center;">
+  <caption style="caption-side:bottom; text-align:center; padding-top:8px;">
+    <b>Top-1 accuracy (%) on ScanObjectNN-C using Uni3D-Large (batch size = 1).</b><br>
+    <b>*</b> denotes VLFM-based TTA. Source-Only shows performance without adaptation.<br>
+    Best and second-best are in <b>bold</b> and <u>underline</u>.
+  </caption>
+
+  <thead>
+    <tr style="border-bottom:3px solid #000;">
+      <th>Method</th>
+      <th>uni</th><th>gauss</th><th>backg</th><th>impul</th><th>upsam</th>
+      <th>rbf</th><th>rbf-inv</th><th>den-dec</th><th>dens-inc</th>
+      <th>shear</th><th>rot</th><th>cut</th><th>distort</th><th>oclsion</th><th>lidar</th>
+      <th><b>Avg.</b></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <!-- Source Only -->
+    <tr style="border-top:2px solid #000;">
+      <td><b>Source-Only</b></td>
+      <td>29.78</td><td>25.99</td><td>40.62</td><td>45.96</td><td>30.64</td>
+      <td>33.05</td><td>34.42</td><td>56.28</td><td>47.16</td>
+      <td>54.22</td><td>54.04</td><td>56.80</td><td>43.55</td>
+      <td>9.98</td><td>8.61</td><td>38.07</td>
+    </tr>
+
+    <!-- Training-based -->
+    <tr><td>TENT (ICLR21)</td><td>29.78</td><td>26.16</td><td>49.91</td><td>51.46</td><td>30.65</td><td>33.22</td><td>36.32</td><td>55.08</td><td>45.27</td><td>52.50</td><td>53.18</td><td>55.77</td><td>44.92</td><td>7.06</td><td>3.79</td><td>38.34</td></tr>
+
+    <tr><td>SHOT (ICML20)</td><td>29.60</td><td>26.85</td><td>51.12</td><td>52.32</td><td>31.33</td><td>33.73</td><td>37.20</td><td>56.80</td><td>45.78</td><td>54.57</td><td>54.22</td><td>56.31</td><td>45.27</td><td>6.72</td><td>3.96</td><td>39.05</td></tr>
+
+    <tr><td>SAR (ICLR23)</td><td>29.08</td><td>27.54</td><td>42.17</td><td>44.58</td><td>31.33</td><td>32.36</td><td>34.77</td><td>56.28</td><td>44.41</td><td>52.84</td><td>54.22</td><td>55.59</td><td>44.06</td><td>9.64</td><td><u>9.64</u></td><td>37.90</td></tr>
+
+    <tr><td>DUA (CVPR22)</td><td>29.95</td><td>27.37</td><td>41.65</td><td>44.92</td><td>30.81</td><td>32.53</td><td>34.08</td><td>56.63</td><td>45.09</td><td>53.87</td><td>54.22</td><td>55.77</td><td>43.89</td><td>9.81</td><td>9.47</td><td>38.00</td></tr>
+
+    <tr><td>MEMO (NIPS22)</td><td>29.77</td><td>26.16</td><td>49.91</td><td>51.46</td><td>30.64</td><td>33.22</td><td>36.32</td><td>55.08</td><td>45.27</td><td>52.50</td><td>53.18</td><td>55.77</td><td>44.92</td><td>7.05</td><td>3.78</td><td>38.34</td></tr>
+
+    <tr>
+      <td>TPT* (NIPS22)</td>
+      <td>30.04</td><td>28.43</td><td>40.95</td><td>46.76</td><td>32.68</td><td>35.55</td><td>34.39</td><td>56.60</td><td>50.66</td><td>53.81</td><td>54.39</td><td>60.30</td><td>42.70</td>
+      <td><u>11.13</u></td><td>6.07</td><td>38.96</td>
+    </tr>
+
+    <tr><td>LAME (CVPR22)</td><td>29.60</td><td>26.85</td><td>51.12</td><td>52.32</td><td>31.33</td><td>33.73</td><td>37.18</td><td>56.80</td><td>45.78</td><td>54.56</td><td>54.22</td><td>56.29</td><td>45.27</td><td>6.71</td><td>3.96</td><td>39.05</td></tr>
+
+    <!-- Training-free -->
+    <tr><td>3DD-TTA (WACV25)</td><td>32.19</td><td>30.81</td><td>27.71</td><td>39.59</td><td>34.60</td><td>25.82</td><td>26.51</td><td>45.61</td><td>38.04</td><td>36.14</td><td>33.39</td><td>45.09</td><td>33.05</td><td>8.61</td><td>4.47</td><td>30.78</td></tr>
+
+    <tr><td>CloudFixer † (ECCV24)</td>
+      <td><b>36.83</b></td><td><u>33.22</u></td><td>36.14</td><td>48.19</td><td><u>37.69</u></td>
+      <td>27.54</td><td>30.46</td><td>45.44</td><td>40.28</td><td>38.73</td><td>38.21</td><td>46.13</td><td>35.28</td>
+      <td>10.67</td><td><b>11.70</b></td><td>34.43</td>
+    </tr>
+
+    <tr><td>T3A (NIPS21)</td>
+      <td>34.94</td><td>32.70</td><td>34.08</td><td>43.37</td><td>33.22</td>
+      <td>36.49</td><td>36.32</td><td><b>62.65</b></td><td><b>55.42</b></td>
+      <td><u>61.46</u></td><td><b>62.31</b></td><td><b>64.03</b></td><td><b>56.97</b></td>
+      <td>9.47</td><td>8.61</td><td><u>42.14</u></td>
+    </tr>
+
+    <tr><td>TDA* (CVPR24)</td><td>31.33</td><td>28.40</td><td>52.67</td><td>53.36</td><td>32.36</td><td>36.32</td><td>40.45</td><td>56.80</td><td>46.82</td><td>55.25</td><td>55.76</td><td>57.66</td><td>49.40</td><td>8.09</td><td>4.65</td><td>40.62</td></tr>
+
+    <tr><td>Point-Cache* (CVPR25)</td>
+      <td>30.98</td><td>27.19</td><td><b>55.25</b></td><td><u>56.45</u></td><td>33.73</td>
+      <td><u>40.79</u></td><td><u>43.03</u></td><td>59.50</td><td>49.23</td><td>60.07</td><td>56.63</td><td>57.66</td><td>49.05</td>
+      <td>8.26</td><td>4.30</td><td>42.13</td>
+    </tr>
+
+    <!-- Ours -->
+    <tr style="background-color:#e6e6e6;">
+      <td><b>Uni-Adapter (Ours)</b></td>
+      <td><u>35.28</u></td><td><b>37.69</b></td><td><u>53.35</u></td><td><b>59.55</b></td>
+      <td><b>39.07</b></td><td><b>42.16</b></td><td><b>52.49</b></td><td><u>60.58</u></td>
+      <td><u>51.97</u></td><td><b>61.61</b></td><td><u>60.24</u></td><td><u>60.92</u></td>
+      <td><u>54.38</u></td><td><b>20.82</b></td><td>4.81</td><td><b>46.33</b></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
 
 
 
